@@ -18,7 +18,8 @@ class GithubRepository {
     self.fullName = dictionary["full_name"] as? String ?? ""
     let urlString =  dictionary["html_url"] as? String ?? "https://nope.com"
     self.htmlURL = URL(string: urlString)!
-    self.repositoryID = dictionary["id"] as? String ?? ""
+    let id = dictionary["id"] as? Int ?? 0
+    self.repositoryID = String(id)
   }
     
 }
